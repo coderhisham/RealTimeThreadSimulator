@@ -455,7 +455,7 @@ export const useThreadStore = create<ThreadStore>((set, get) => ({
         // Update any thread waiting for this resource
         const updatedThreads = state.threads.map(thread => 
           thread.waitingFor === id
-            ? { ...thread, waitingFor: undefined, status: "ready" }
+            ? { ...thread, waitingFor: undefined, status: "ready" as ThreadStatus }
             : thread
         );
         

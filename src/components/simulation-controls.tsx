@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
-import { useSimulationStore } from "@/stores/simulation-store"
-import { Play, Pause, RotateCcw } from "lucide-react"
+import { useSimulationStore } from "@/store/simulation-store"
+import { Play, Pause, RotateCw } from "lucide-react"
 
 export function SimulationControls() {
   const { 
@@ -31,7 +31,7 @@ export function SimulationControls() {
         onClick={resetSimulation}
         aria-label="Reset simulation"
       >
-        <RotateCcw className="h-4 w-4" />
+        <RotateCw className="h-4 w-4" />
       </Button>
 
       <div className="flex items-center gap-2 flex-1">
