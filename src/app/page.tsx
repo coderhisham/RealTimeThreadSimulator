@@ -25,7 +25,7 @@ import { ThreadDialog } from "@/components/thread-dialog";
 import { ResourceDialog } from "@/components/resource-dialog";
 import { LogDialog } from "@/components/log-dialog";
 import { ModelInfoDialog } from "@/components/model-info-dialog";
-import { VisualizationDialog } from "@/components/visualization-dialog";
+import { ModelContentDialog } from "@/components/model-content-dialog";
 import { LearningDialog } from "@/components/learning-dialog";
 import { Slider } from "@/components/ui/slider";
 
@@ -52,7 +52,6 @@ export default function ThreadManager() {
   const [isResourceDialogOpen, setIsResourceDialogOpen] = useState(false);
   const [isLogDialogOpen, setIsLogDialogOpen] = useState(false);
   const [isModelInfoDialogOpen, setIsModelInfoDialogOpen] = useState(false);
-  const [isVisualizationDialogOpen, setIsVisualizationDialogOpen] = useState(false);
   const [isLearningDialogOpen, setIsLearningDialogOpen] = useState(false);
   const [selectedThread, setSelectedThread] = useState<Thread | null>(null);
 
@@ -138,14 +137,6 @@ export default function ThreadManager() {
           >
             <BookOpen className="h-4 w-4" />
             Learning
-          </Button>
-          <Button 
-            onClick={() => setIsVisualizationDialogOpen(true)} 
-            variant="outline" 
-            className="gap-2"
-          >
-            <Activity className="h-4 w-4" />
-            Visualization
           </Button>
           <Button 
             onClick={() => setIsLogDialogOpen(true)} 
@@ -450,11 +441,6 @@ export default function ThreadManager() {
       <ModelInfoDialog
         open={isModelInfoDialogOpen}
         onOpenChange={setIsModelInfoDialogOpen}
-      />
-      
-      <VisualizationDialog
-        open={isVisualizationDialogOpen}
-        onOpenChange={setIsVisualizationDialogOpen}
       />
       
       <LearningDialog
